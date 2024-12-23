@@ -1,13 +1,13 @@
 # The version number of this file format
 meta:
   version: 1.0.0
-# The front end versions that support this file format version 
+# The front end versions that support this file format version
 frontend:
   version: ">=1.0.2"
 # The framework version this store file applies to
 framework:
   version: =3.0.5
-  github-tag: 'v3.0.5' # Or branch
+  github-tag: "v3.0.5" # Or branch
   github-sha: fd326a41d8927eaee42dfb542658843138c15867
 # When this store was created
 timestamp: ~
@@ -17,9 +17,9 @@ supported-languages:
   - en
 # The extensions defined in this store
 extensions:
-# The list of extensions
+  # The list of extensions
   list:
-# Plugins
+    # Plugins
     - definition:
         name: AI-Tournament-Maps
         version: 1.0.0
@@ -250,7 +250,7 @@ extensions:
           url: Krarilotus/Ascension
           github-sha: 72e961f1c051e8214c2ef041c38bb42c6f2de36a
           github-tag: ucp3-ascension
-          location: extension-Ascension-AI-Balance   
+          location: extension-Ascension-AI-Balance
     - definition:
         name: Ascension-Balance
         version: 1.0.0
@@ -295,7 +295,7 @@ extensions:
           github-sha: 72e961f1c051e8214c2ef041c38bb42c6f2de36a
           github-tag: ucp3-ascension
           location: extension-Ascension-Maps
-# Modules
+    # Modules
     - definition:
         name: aiSwapper
         version: 1.1.0
@@ -358,13 +358,13 @@ extensions:
           github-tag: main
     - definition:
         name: graphicsApiReplacer
-        version: 1.2.0
+        version: 1.2.1
         type: module
       contents:
         source:
           method: github
           url: TheRedDaemon/ucp_graphicsApiReplacer
-          github-sha: 14ef8ddf5b55d57778c2a7cf7b0e522bc045a191
+          github-sha: 72212d7bc3db0d8f46bfefc45b27018b03e96e1b
           github-tag: main
     - definition:
         name: maploader
@@ -436,5 +436,13 @@ extensions:
           url: CIO61/rebalancer
           github-sha: 8b256116ef3b62493ace2159834888a90e9870ab
           github-tag: master
-
-   
+    - definition:
+        name: automarket
+        version: 0.0.1
+        type: module
+      contents:
+        source:
+          method: github
+          url: gynt/StrongholdCrusader-AutoMarket
+          github-sha: e056db73bd0e7e3269271a751f3d303703a401ab
+          github-tag: master

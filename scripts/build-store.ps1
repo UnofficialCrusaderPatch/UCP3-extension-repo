@@ -1,6 +1,7 @@
 Param(
   [Parameter(Mandatory = $true, ValueFromPipeline = $false)][string]$Certificate,
-  [Parameter(Mandatory = $false, ValueFromPipeline = $false)][string]$NugetToken
+  [Parameter(Mandatory = $false, ValueFromPipeline = $false)][string]$NugetToken,
+  [Parameter(Mandatory = $false, ValueFromPipeline = $false)][switch]$Force = $false
 )
 
 # Stop this entire script in case of errors
@@ -27,9 +28,13 @@ $recipe = Get-Content .\recipe.yml | ConvertFrom-Yaml
 $gitBranch = git rev-parse --abbrev-ref HEAD
 
 if ($recipe.framework.version -ne "=$($gitBranch)") {
-  Write-Error "Aborting. Version mismatch between recipe and branch: $($recipe.framework.version) <> $($gitBranch)"
+  if ($false -eq $Force) {
+    Write-Error "Aborting. Version mismatch between recipe and branch: $($recipe.framework.version) <> $($gitBranch)"
 
-  return 1
+    return 1
+  }
+  Write-Warning "Warning. Version mismatch between recipe and branch: $($recipe.framework.version) <> $($gitBranch)"
+
 }
 
 $releaseTags = gh --repo $REPO release list --json tagName | ConvertFrom-Json | ForEach-Object { $_.tagName }
