@@ -6,9 +6,9 @@ frontend:
   version: ">=1.0.2"
 # The framework version this store file applies to
 framework:
-  version: =3.0.5
-  github-tag: 'v3.0.5' # Or branch
-  github-sha: fd326a41d8927eaee42dfb542658843138c15867
+  version: =3.0.6
+  github-tag: 'v3.0.6' # Or branch
+  github-sha: 85005291a393aa1472222a3bb974561bc51cd4e7
 # When this store was created
 timestamp: ~
 # Which certificate signed the modules in this store
@@ -118,7 +118,7 @@ extensions:
         source:
           method: github
           url: UnofficialCrusaderPatch/extension-ucp2-aic-patch
-          github-sha: d151cd0a044222c81465bbe04b600fc3f07701c2
+          github-sha: 3d39204e179bf848896fd59b6efae9b5a959123c
           github-tag: main
     - definition:
         name: ucp2-evrey-aiv
@@ -128,7 +128,7 @@ extensions:
         source:
           method: github
           url: UnofficialCrusaderPatch/extension-ucp2-evrey-aiv
-          github-sha: 9371f3281ae18ab257c5d3eb74a24b37e91f9c76
+          github-sha: d1c5007f19103917947682755b7d4bce394c9243
           github-tag: main
     - definition:
         name: ucp2-legacy-defaults
@@ -148,7 +148,7 @@ extensions:
         source:
           method: github
           url: UnofficialCrusaderPatch/extension-ucp2-tatha-aiv
-          github-sha: b29b3a3edc4b714a00b063b03a33cca382761340
+          github-sha: 5c9775b6dd90f9be77b50f30183c3c69a2467ee9
           github-tag: main
     - definition:
         name: ucp2-vanilla-fixed-aiv
@@ -158,47 +158,47 @@ extensions:
         source:
           method: github
           url: UnofficialCrusaderPatch/extension-ucp2-vanilla-fixed-aiv
-          github-sha: 87bb2e97ad2b3ff4368a18516cd5c0856ff666ea
+          github-sha: 2aac2f860ed81a0f38212e4ae953d53867f5f396
           github-tag: main
     - definition:
         name: Legends-Of-The-Orient
-        version: 3.0.1
+        version: 3.0.3
         type: plugin
       contents:
         source:
           method: github
           url: CrusaderPilaw/extension-Legends-of-the-Orient
-          github-sha: 71968dbc4be31718fa4740311740e04a3ff7c089
+          github-sha: 1e9a785e65107345403f28fb40d365d6df8001ab
           github-tag: main
     - definition:
         name: Legends-Of-The-Orient-AI
-        version: 3.0.1
+        version: 3.0.2
         type: plugin
       contents:
         source:
           method: github
           url: CrusaderPilaw/extension-Legends-of-the-Orient-AI
-          github-sha: f9abda8a566b81c6d50382724f5f208f2e1a3202
+          github-sha: 2fd8840c40264a53110fc21e9060d098192b1049
           github-tag: main
     - definition:
         name: Fiery-Ladies
         type: plugin
-        version: 0.375.0
+        version: 0.4.0
       contents:
         source:
           method: github
           url: ByBurton/extension-fiery-ladies
-          github-sha: 4131c5400c2f3fe062ab36d9c7670c0e118e1ab7
+          github-sha: 39bc99c47eee03311440b37882c68ed442a4ef73
           github-tag: main
     - definition:
         name: Fiery-Ladies-AI
         type: plugin
-        version: 0.375.0
+        version: 0.4.0
       contents:
         source:
           method: github
           url: ByBurton/extension-fiery-ladies-ai
-          github-sha: 8711ac1dceb0a9b1eaae2c4399d287fdb3ae0343
+          github-sha: 5567282108b89387bd2bc7016d67995c7cd0fcb4
           github-tag: main
     - definition:
         name: Schlossgespenst-KI
@@ -242,24 +242,24 @@ extensions:
           github-tag: main
     - definition:
         name: Ascension-AI-Balance
-        version: 1.0.2
+        version: 1.0.6
         type: plugin
       contents:
         source:
           method: github
           url: Krarilotus/Ascension
-          github-sha: 72e961f1c051e8214c2ef041c38bb42c6f2de36a
+          github-sha: 184749f1432b8330848abc64faf87a4d83090c29
           github-tag: ucp3-ascension
           location: extension-Ascension-AI-Balance   
     - definition:
         name: Ascension-Balance
-        version: 1.0.0
+        version: 1.0.3
         type: plugin
       contents:
         source:
           method: github
           url: Krarilotus/Ascension
-          github-sha: 72e961f1c051e8214c2ef041c38bb42c6f2de36a
+          github-sha: 184749f1432b8330848abc64faf87a4d83090c29
           github-tag: ucp3-ascension
           location: extension-Ascension-Balance
     - definition:
@@ -270,31 +270,73 @@ extensions:
         source:
           method: github
           url: Krarilotus/Ascension
-          github-sha: 72e961f1c051e8214c2ef041c38bb42c6f2de36a
+          github-sha: 184749f1432b8330848abc64faf87a4d83090c29
           github-tag: ucp3-ascension
           location: extension-Ascension-AI
     - definition:
         name: Ascension-Multiplayer
-        version: 1.0.0
+        version: 1.0.4
         type: plugin
       contents:
         source:
           method: github
           url: Krarilotus/Ascension
-          github-sha: 72e961f1c051e8214c2ef041c38bb42c6f2de36a
+          github-sha: 184749f1432b8330848abc64faf87a4d83090c29
           github-tag: ucp3-ascension
           location: extension-Ascension-Multiplayer
     - definition:
         name: Ascension-Maps
-        version: 1.0.0
+        version: 1.0.1
         type: plugin
       contents:
         source:
           method: github
           url: Krarilotus/Ascension
-          github-sha: 72e961f1c051e8214c2ef041c38bb42c6f2de36a
+          github-sha: 184749f1432b8330848abc64faf87a4d83090c29
           github-tag: ucp3-ascension
           location: extension-Ascension-Maps
+    - definition:
+        name: Community-Paket-Files
+        version: 1.0.1
+        type: plugin
+      contents:
+        source:
+          method: github
+          url: Nevikov/Community-Paket-UCP3
+          github-sha: 1e11f99033c598567145a6597f733945881ba70a
+          github-tag: main
+          location: Community-Paket-Files
+    - definition:
+        name: Community-Paket
+        version: 1.0.1
+        type: plugin
+      contents:
+        source:
+          method: github
+          url: Nevikov/Community-Paket-UCP3
+          github-sha: 1e11f99033c598567145a6597f733945881ba70a
+          github-tag: main
+          location: Community-Paket
+    - definition:
+        name: Die-neuen-Herrscher
+        version: 1.0.0
+        type: plugin
+      contents:
+        source:
+          method: github
+          url: Hacksuelze/Die-neuen-Herrscher
+          github-sha: 4a02e6e6cefa730725473c881960f1324c410ffe
+          github-tag: main
+    - definition:
+        name: Die-neuen-Herrscher-KI-Files
+        version: 1.0.0
+        type: plugin
+      contents:
+        source:
+          method: github
+          url: Hacksuelze/Die-neuen-Herrscher-KI
+          github-sha: 080d56188175cb36699b8b980e1d73543dc01fdb
+          github-tag: main
 # Modules
     - definition:
         name: aiSwapper
@@ -368,23 +410,23 @@ extensions:
           github-tag: main
     - definition:
         name: maploader
-        version: 1.0.0
+        version: 1.0.1
         type: module
       contents:
         source:
           method: github
           url: UnofficialCrusaderPatch/extension-maploader
-          github-sha: 658f9e73feb1ff4b4da3e45f236cb2ff0c1d8d32
+          github-sha: 0786734b212f486743157a94ba089e3e31805bbc
           github-tag: main
     - definition:
         name: startResources
-        version: 1.0.0
+        version: 1.0.1
         type: module
       contents:
         source:
           method: github
-          url: gynt/ucp_startResources
-          github-sha: 1942ce1e1d55ea4499a997fbecf719f882c9f715
+          url: gynt/ucp-extension-startResources
+          github-sha: 71e6d7c2a9691c2110a2e823501ab9c4510d537f
           github-tag: main
     - definition:
         name: textResourceModifier
@@ -428,13 +470,23 @@ extensions:
           github-tag: main
     - definition:
         name: rebalancer
-        version: 1.0.3
+        version: 1.0.6
         type: module
       contents:
         source:
           method: github
           url: CIO61/rebalancer
-          github-sha: 8b256116ef3b62493ace2159834888a90e9870ab
+          github-sha: 14af1a3239e2a912de6e19b1a406917583acca2e
           github-tag: master
+    - definition:
+        name: citizens
+        version: 1.0.0
+        type: module
+      contents:
+        source:
+          method: github
+          url: gynt/ucp-extension-citizens
+          github-sha: 74b4b610212110f4bd21195efb9d35b0d0c90f04
+          github-tag: main
 
    

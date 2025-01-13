@@ -1,6 +1,7 @@
 Param(
   [Parameter(Mandatory = $true, ValueFromPipeline = $false)][string]$Certificate,
-  [Parameter(Mandatory = $false, ValueFromPipeline = $false)][string]$NugetToken
+  [Parameter(Mandatory = $false, ValueFromPipeline = $false)][string]$NugetToken,
+  [Parameter(Mandatory = $false, ValueFromPipeline = $false)][boolean]$Clean = $true
 )
 
 # Stop this entire script in case of errors
@@ -11,7 +12,9 @@ $UCP3_REPO = "UnofficialCrusaderPatch/UnofficialCrusaderPatch3"
 $STORE_FILE_NAME = "store.yml"
 
 # Prepare the build directory
-Remove-Item -Path "build" -Recurse -ErrorAction Ignore -Force | Out-Null
+if ($true -eq $Clean) {
+  Remove-Item -Path "build" -Recurse -ErrorAction Ignore -Force | Out-Null
+}
 New-Item -Path "build" -ItemType "directory" -ErrorAction Ignore | Out-Null
 
 
@@ -21,7 +24,7 @@ if (!(Get-Module -ListAvailable -Name powershell-yaml)) {
 }
 
 Import-Module powershell-yaml
-Import-Module "$($PSScriptRoot)\fix-dependency-statement.ps1"
+# Import-Module "$($PSScriptRoot)\fix-dependency-statement.ps1"
 
 $recipe = Get-Content .\recipe.yml | ConvertFrom-Yaml
 $gitBranch = git rev-parse --abbrev-ref HEAD
@@ -51,6 +54,7 @@ foreach ($extension in $extensions) {
     $defPath = "$($source.location)/definition.yml"
   }
   
+  Write-Debug "Fetching $baseUrl/$defPath"
   $definition = Invoke-WebRequest -Uri "$baseUrl/$defPath" |
   Select-Object -ExpandProperty Content | 
   ConvertFrom-Yaml
@@ -76,7 +80,10 @@ foreach ($extension in $extensions) {
   }
 
   if ($null -ne $definition.dependencies) {
-    $definition.dependencies = Update-Dependency-Statement $definition.dependencies
+    if ($false -eq $definition.dependencies.GetType().Name.Contains("Hashtable")) {
+      Write-Error "Aborting. Extension dependencies are in old format: $($definition.name)"
+    }
+    # $definition.dependencies = $definition.dependencies
   }
 
   $extension.definition = $definition
@@ -274,10 +281,10 @@ foreach ($extension in $extensionsToBeBuilt) {
 
   # Now call the build scripts:
   if ($extension.definition.type -eq "module") {
-    & ".\build\ucp3\scripts\build-module.ps1" -Path $destination -Destination "$binaryDestination\" -BUILD_CONFIGURATION "ReleaseSecure" -UCPNuPkgPath "$NUPKG_DIRECTORY" -RemoveZippedFolders
+    & ".\build\ucp3\scripts\build-module.ps1" -Path $destination -Destination "$binaryDestination\" -BUILD_CONFIGURATION "ReleaseSecure" -UCPNuPkgPath "$NUPKG_DIRECTORY" -RemoveZippedFolders $true
   }
   else {
-    & ".\build\ucp3\scripts\build-plugin.ps1" -Path $destination -Destination "$binaryDestination" -RemoveZippedFolders -Zip
+    & ".\build\ucp3\scripts\build-plugin.ps1" -Path $destination -Destination "$binaryDestination" -RemoveZippedFolders $true -Zip
   }
 }
 
